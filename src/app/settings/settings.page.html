@@ -6,17 +6,22 @@
 
 <ion-content>
   <form onsubmit="">
-    <ion-item>
-      <ion-label position="floating"
-        >Activity <ion-text color="danger">*</ion-text></ion-label
-      >
-      <ion-input required type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating"
-        >Activity <ion-text color="danger">*</ion-text></ion-label
-      >
-      <ion-input required type="text"></ion-input>
-    </ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Activity </ion-label>
+        <ion-input required type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Character</ion-label>
+        <ion-select value="character" interface="action-sheet">
+          <ion-select-option value="yuchan">Yu Matsumoto</ion-select-option>
+          <ion-select-option value="lunix">Linasdsdx</ion-select-option>
+          <ion-select-option value="mac7">Mac OS 7</ion-select-option>
+          <ion-select-option value="mac8">Mac oinS 8</ion-select-option>
+          <ion-select-option value="win95">Windows 95</ion-select-option>
+          <ion-select-option value="win98">Windows 98</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
   </form>
 </ion-content>

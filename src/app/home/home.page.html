@@ -1,47 +1,65 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar>
     <ion-title size="large">Time to start {{ activity }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <div id="container">
-    <strong>Ready to be productive?</strong>
-    <ion-card>
-      <img
-        src="../assets/characters/yuchan/bang__by_tomodachibluu_dd1k0yk.png"
-        alt="character splash"
-      />
-      <ion-card-subtitle>
-        <ion-label *ngIf="resting">Rest cycle</ion-label>
-        <ion-label *ngIf="!resting">Work cycle</ion-label>
-      </ion-card-subtitle>
-      <div id="progressWrapper">
-        <ion-label id="displayTime">{{ display_time | async }}</ion-label>
-        <round-progress
-          [current]="timer"
-          [max]="maxTime"
-          [semicircle]="true"
-          color="#079992"
+<ion-content [fullscreen]="true" forceOverscroll>
+  <ion-slides>
+    <ion-slide>
+      <ion-card>
+        <img
+          (click)="playVideo()"
+          src="../assets/characters/yuchan/bang__by_tomodachibluu_dd1k0yk.png"
+          alt="character splash"
+        />
+        <ion-card-subtitle>
+          <ion-label *ngIf="resting">Rest cycle</ion-label>
+          <ion-label *ngIf="!resting">Work cycle</ion-label>
+        </ion-card-subtitle>
+        <div id="progressWrapper">
+          <ion-label id="displayTime">{{ display_time | async }}</ion-label>
+          <round-progress
+            [current]="timer"
+            [max]="maxTime"
+            [semicircle]="true"
+            color="#079992"
+          >
+          </round-progress>
+        </div>
+        <ion-button
+          class="timerbtn"
+          *ngIf="time_state"
+          (click)="stopTimer()"
+          color="danger"
+          expand="full"
+          >Stop</ion-button
         >
-        </round-progress>
-      </div>
-      <ion-button
-        class="timerbtn"
-        *ngIf="time_state"
-        (click)="stopTimer()"
-        color="danger"
-        expand="full"
-        >Stop</ion-button
+        <ion-button
+          class="timerbtn"
+          *ngIf="!time_state"
+          (click)="startWork()"
+          color="secondary"
+          expand="full"
+          >Start</ion-button
+        >
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <video
+        width="320"
+        height="240"
+        controls="controls"
+        preload="metadata"
+        autoplay="autoplay"
+        webkit-playsinline="webkit-playsinline"
+        class="videoPlayer"
       >
-      <ion-button
-        class="timerbtn"
-        *ngIf="!time_state"
-        (click)="startWork()"
-        color="secondary"
-        expand="full"
-        >Start</ion-button
-      >
-    </ion-card>
-  </div>
+        <source
+          src="../assets/characters/yuchan/cuts/cut2.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

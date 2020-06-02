@@ -9,6 +9,6 @@ export class SettingsPage implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log("I am up to date");
+    console.log("I am up to datsade");
   }
 }

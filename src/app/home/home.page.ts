@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { RoundProgressComponent } from "angular-svg-round-progressbar";
-//import { VideoPlayer } from "@ionic-native/video-player/ngx";
 
 @Component({
   selector: "app-home",
@@ -66,15 +65,7 @@ export class HomePage {
   }
 
   playVideo(): void {
-    /* this.videoPlayer
-      .play("../assets/")
-      .then(() => {
-        console.log("video completed");
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-      */
+    console.log("i am not working");
   }
 
   requestVideo(currTime: string): void {
@@ -84,7 +75,6 @@ export class HomePage {
     } else if (clipInterval > this.clipsPlayed) {
     }
   }
-  //private videoPlayer: VideoPlayer
   constructor() {
     this.display_time.subscribe(this.requestVideo);
     console.log("I am up to date");
