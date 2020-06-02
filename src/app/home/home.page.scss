@@ -25,3 +25,30 @@
 #container a {
   text-decoration: none;
 }
+
+img {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.timerbtn {
+  margin: 0;
+}
+
+#progressWrapper {
+  display: block;
+  position: relative;
+}
+
+#displayTime {
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  font-size: 300%;
+  transform: translateY(-50%) translateX(-50%);
+  position: absolute;
+}
+
+round-progress {
+  margin: auto;
+}

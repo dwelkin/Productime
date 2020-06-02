@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title size="large">Time to start {{ activity }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong>Ready to be productive?</strong>
+    <ion-card>
+      <img
+        src="../assets/characters/yuchan/bang__by_tomodachibluu_dd1k0yk.png"
+        alt="character splash"
+      />
+      <ion-card-subtitle>
+        <ion-label *ngIf="resting">Rest cycle</ion-label>
+        <ion-label *ngIf="!resting">Work cycle</ion-label>
+      </ion-card-subtitle>
+      <div id="progressWrapper">
+        <ion-label id="displayTime">{{ display_time | async }}</ion-label>
+        <round-progress
+          [current]="timer"
+          [max]="maxTime"
+          [semicircle]="true"
+          color="#079992"
+        >
+        </round-progress>
+      </div>
+      <ion-button
+        class="timerbtn"
+        *ngIf="time_state"
+        (click)="stopTimer()"
+        color="danger"
+        expand="full"
+        >Stop</ion-button
+      >
+      <ion-button
+        class="timerbtn"
+        *ngIf="!time_state"
+        (click)="startWork()"
+        color="secondary"
+        expand="full"
+        >Start</ion-button
+      >
+    </ion-card>
   </div>
 </ion-content>

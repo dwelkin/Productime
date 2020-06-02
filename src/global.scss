@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,18 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+  --ion-color-primary: #0a3d62;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #083353;
+  --ion-color-primary-tint: #0f5f98;
+  --ion-color-secondary: #079992;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-shade: #05827c;
+  --ion-color-secondary-tint: #09cbc1;
+  --ion-color-danger: #b71540;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-shade: #9b1136;
+  --ion-color-danger-tint: #e0194e;
+}
