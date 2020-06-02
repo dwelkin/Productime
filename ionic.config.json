@@ -1,0 +1,7 @@
+{
+  "name": "Productime",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
