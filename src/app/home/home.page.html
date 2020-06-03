@@ -1,16 +1,21 @@
 <ion-header translucent>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title size="large">Time to start {{ activity }}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button round (click)="goSettings()">
+        <ion-icon name="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" forceOverscroll>
-  <ion-slides>
+  <ion-slides #mainSlides>
     <ion-slide>
       <ion-card>
         <img
-          (click)="playVideo()"
-          src="../assets/characters/yuchan/bang__by_tomodachibluu_dd1k0yk.png"
+          (click)="requestVideo()"
+          [src]="splashArt"
           alt="character splash"
         />
         <ion-card-subtitle>
@@ -47,18 +52,21 @@
     </ion-slide>
     <ion-slide>
       <video
-        width="320"
-        height="240"
-        controls="controls"
+        width="380"
+        height="290"
         preload="metadata"
-        autoplay="autoplay"
-        webkit-playsinline="webkit-playsinline"
+        webkit-playsinline
         class="videoPlayer"
+        (ended)="endVideo()"
+        #videoPlayer
       >
-        <source
-          src="../assets/characters/yuchan/cuts/cut2.mp4"
-          type="video/mp4"
-        />
+        <!--<ng-container *ngFor="let clipSrc of clipSrcs">
+          <source
+            *ngIf="clipSrc.id==chosenClip"
+            [src]="clipSrc.src"
+            type="video/mp4"
+          />
+        </ng-container>-->
       </video>
     </ion-slide>
   </ion-slides>

@@ -26,6 +26,10 @@
   text-decoration: none;
 }*/
 
+ion-content {
+  --background: var(--ion-color-primary-shade);
+}
+
 img {
   padding-bottom: 0;
   margin-bottom: 0;
@@ -51,4 +55,8 @@ img {
 
 round-progress {
   margin: auto;
+}
+
+video {
+  vertical-align: middle;
 }
